@@ -30,13 +30,6 @@ fn main() {
         let before = acc.load(Ordering::Relaxed);
         std::thread::sleep(std::time::Duration::from_secs(10));
         let after = acc.load(Ordering::Relaxed);
-        println!("Proofs per second: {}", (before - after) as f64 / 10.0);
+        println!("Proofs per second: {}", (after - before) as f64 / 10.0);
     }
-}
-
-
-
-fn prove(puzzle: Puzzle<MainnetV0>, epoch_hash: <MainnetV0 as Network>::BlockHash, address: Address<MainnetV0>){
-    let counter = &mut thread_rng();
-    let _ = puzzle.prove(epoch_hash, address, counter.next_u64(), None).unwrap();
 }

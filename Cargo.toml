@@ -15,4 +15,4 @@ rand = "0.8"
 [dependencies.snarkvm-ledger-puzzle-epoch]
 version = "1"
 package = "snarkvm-ledger-puzzle-epoch"
-features = ["synthesis"]
+features = ["synthesis", "serial"]
